@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2013 theo crevon
+#
+# See the file LICENSE for copying permission.
+
 from rest_framework import serializers
 
 from cities_light.models import City, Region, Country

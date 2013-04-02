@@ -1,5 +1,10 @@
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2013 theo crevon
+#
+# See the file LICENSE for copying permission.
+
 from django.conf.urls.defaults import patterns, url
-from django.core import urlresolvers
 
 from .views import CityList, CityDetail, RegionList,\
                    RegionDetail, CountryList, CountryDetail
