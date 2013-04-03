@@ -4,26 +4,58 @@ from cities_light.models import City, Region, Country
 
 
 class CityFilter(django_filters.FilterSet):
-    search_names = django_filters.CharFilter(lookup_type='icontains')
+    name_contains = django_filters.CharFilter(
+    	name='search_names',
+    	lookup_type='icontains'
+    )
+    name_startswith = django_filters.CharFilter(
+    	name='search_names',
+    	lookup_type='istartswith'
+    )
     
     class Meta:
         model = City
-        fields = ['country', 'region', 'search_names']
+        fields = [
+        	'country',
+        	'region',
+        	'name_contains',
+        	'name_startswith'
+        ]
 
 
 class RegionFilter(django_filters.FilterSet):
 	# support a `icontains` based ?search_name param which
 	# filters results based on region ascii name
-	search_name = django_filters.CharFilter(name='name_ascii', lookup_type='icontains')
+	name_contains = django_filters.CharFilter(
+		name='name_ascii', 
+		lookup_type='icontains'
+	)
+	name_startswith = django_filters.CharFilter(
+		name='name_ascii',
+		lookup_type='istartswith'
+	)
 
 	class Meta:
 		model = Region
-		fields = ['country', 'search_name']
+		fields = [
+			'country',
+			'name_contains',
+			'name_startswith'
+		]
 
 
 class CountryFilter(django_filters.FilterSet):
-	search_name = django_filters.CharFilter(name='name_ascii', lookup_type='icontains')
-
+	name_contains = django_filters.CharFilter(
+		name='name_ascii',
+		lookup_type='icontains'
+	)
+	name_startswith = django_filters.CharFilter(
+		name='name_ascii',
+		lookup_type='istartswith'
+	)
 	class Meta:
 		model = Country
-		fields = ['search_name']
+		fields = [
+			'name_contains',
+			'name_startswith'
+		]
