@@ -10,32 +10,32 @@ from .views import CityList, CityDetail, RegionList,\
                    RegionDetail, CountryList, CountryDetail
 
 urlpatterns = patterns('',
-    url(r'^city/$',
+    url(r'^cities/$',
         CityList.as_view(),
         name='cities_light_api_city_list',
     ),
 
-    url(r'^city/(?P<pk>[^/]+)/$',
+    url(r'^cities/(?P<pk>[^/]+)/$',
         CityDetail.as_view(),
         name='cities_light_api_city_detail',
     ),
 
-    url(r'^region/$',
+    url(r'^regions/$',
         RegionList.as_view(),
         name='cities_light_api_region_list',
     ),
 
-    url(r'^region/(?P<pk>[^/]+)/$',
+    url(r'^regions/(?P<pk>[^/]+)/$',
         RegionDetail.as_view(),
         name='cities_light_api_region_detail',
     ),
 
-    url(r'^country/$',
+    url(r'^countries/$',
         CountryList.as_view(),
         name='cities_light_api_country_list',
     ),
 
-    url(r'^country/(?P<pk>[^/]+)/$',
+    url(r'^countries/(?P<pk>[^/]+)/$',
         CountryDetail.as_view(),
         name='cities_light_api_country_detail',
     ),
